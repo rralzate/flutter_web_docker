@@ -3,7 +3,7 @@ class ResultPlayingMoviesEntity {
   final String backdropPath;
   final List<int> genreIds;
   final int id;
-  final OriginalLanguage originalLanguage;
+
   final String originalTitle;
   final String overview;
   final double popularity;
@@ -19,7 +19,6 @@ class ResultPlayingMoviesEntity {
     required this.backdropPath,
     required this.genreIds,
     required this.id,
-    required this.originalLanguage,
     required this.originalTitle,
     required this.overview,
     required this.popularity,
@@ -36,7 +35,6 @@ class ResultPlayingMoviesEntity {
         backdropPath = '',
         genreIds = [],
         id = 0,
-        originalLanguage = OriginalLanguage.EN,
         originalTitle = '',
         overview = '',
         popularity = 0,
@@ -46,24 +44,4 @@ class ResultPlayingMoviesEntity {
         video = false,
         voteAverage = 0,
         voteCount = 0;
-}
-
-enum OriginalLanguage { EN, ES, FR }
-
-final originalLanguageValues = EnumValues({
-  "en": OriginalLanguage.EN,
-  "es": OriginalLanguage.ES,
-  "fr": OriginalLanguage.FR
-});
-
-class EnumValues<T> {
-  Map<String, T> map;
-  late Map<T, String> reverseMap;
-
-  EnumValues(this.map);
-
-  Map<T, String> get reverse {
-    reverseMap = map.map((k, v) => MapEntry(v, k));
-    return reverseMap;
-  }
 }
